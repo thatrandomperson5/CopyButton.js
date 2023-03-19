@@ -15,7 +15,7 @@
 
 .copyframe {
   pointer-events: none;
-  position: relative;
+  position: absolute;
   display: flex;
   align-items: flex-start;
   width: 100%;
