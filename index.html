@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CopyButton.js</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script defer>
+      hljs.highlightAll();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script
+      defer
+      src="https://CopyButtonjs.dragonhunter1.repl.co/copybutton.js"
+    ></script>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js"></script>
+  </head>
+
+  <body>
+    <h1>CopyButton.js + Tippy.js + Popper.js</h1>
+    <p>Demo also uses Highlight.js and Water.css</p>
+    <h2>Examples</h2>
+    <pre><code class="docopy language-python">print("Hello world")
+
+# comment</code></pre>
+    <pre><code class="docopy language-javascript" data-copybutton-pos="bottomright">console.log("Hello world")
+
+// comment</code></pre>
+    <h2>Usage</h2>
+    <p>Copy the dependencies below:</p>
+    <pre><code class="docopy language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css&quot; integrity=&quot;sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==&quot; crossorigin=&quot;anonymous&quot; referrerpolicy=&quot;no-referrer&quot; /&gt;
+&lt;script src=&quot;https://unpkg.com/@popperjs/core@2&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/tippy.js@6&quot;&gt;&lt;/script&gt;  
+&lt;script defer src=&quot;https://CopyButtonjs.dragonhunter1.repl.co/copybutton.js&quot;&gt;&lt;/script&gt;</code></pre>
+    <p>Optional dependcies:</p>
+    <pre><code class="docopy language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css&quot;&gt;
+&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js&quot;&gt;&lt;/script&gt;
+&lt;script defer&gt;hljs.highlightAll();&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/water.css@2/out/water.css&quot;&gt;</code></pre>
+    <p>
+      After, that you can just use
+      <code>&lt;pre&gt;&lt;code class=&quot;docopy&quot;&gt;</code> anywhere and
+      it will have a copy button!
+    </p>
+    <h2>Configuration</h2>
+    <h3>data-copybutton-class</h3>
+    <p>
+      Configure the class that should be placed upon the copy button. Overridden
+      by <code>data-copybutton-html</code>
+    </p>
+    <pre><code class="docopy language-css" data-copybutton-class="redbutton">/* data-copybutton-class="redbutton" */
+.redbutton {
+    background: red!important;
+}</code></pre>
+    <h3>data-copybutton-icon</h3>
+    <p>
+      Configure the font-awsome icon classname. Not compatible with
+      <code>data-copybutton-html</code>
+    </p>
+    <pre><code class="docopy language-python" data-copybutton-icon="fa-solid fa-rocket"># data-copybutton-icon="fa-solid fa-rocket"
+print("Going to space!")</code></pre>
+    <h3>data-copybutton-html</h3>
+    <p>
+      Configure a js function call that returns an element. This will be the
+      button. Not compatible with <code>data-copybutton-icon</code>
+    </p>
+    <pre><code class="docopy language-javascript" data-copybutton-html="makeCoolButton()">// data-copybutton-html="makeCoolButton()"
+function makeCoolButton() {
+    let button = document.createElement("button");
+    button.innerHTML = `&lt;i&gt;Click to copy!&lt;/i&gt;`;
+    return button;
+}</code></pre>
+    <h3>data-copybutton-message</h3>
+    <p>Set the tooltip message when the copy button is clicked!</p>
+    <pre><code class="docopy language-javascript" data-copybutton-message="Thanks for copying!">// data-copybutton-message="Thanks for copying!"
+console.log("Copy to get a cool message!");</code></pre>
+    <h3>data-copybutton-pos</h3>
+    <p>
+      Sets the position of the copybutton. Can be one of these: topright,
+      topleft, bottomright, bottomleft, midright and midleft.
+    </p>
+    <pre><code class="docopy language-python" data-copybutton-pos="topright"># data-copybutton-pos="topright"
+        
+print("Hello world")</code></pre>
+    <pre><code class="docopy language-python" data-copybutton-pos="topleft"># data-copybutton-pos="topleft"
+        
+print("Hello world")</code></pre>
+    <pre><code class="docopy language-python" data-copybutton-pos="bottomright"># data-copybutton-pos="bottomright"
+        
+print("Hello world")</code></pre>
+    <pre><code class="docopy language-python" data-copybutton-pos="bottomleft"># data-copybutton-pos="bottomleft"
+        
+print("Hello world")</code></pre>
+    <pre><code class="docopy language-python" data-copybutton-pos="midright"># data-copybutton-pos="midright"
+        
+print("Hello world")</code></pre>
+    <pre><code class="docopy language-python" data-copybutton-pos="midleft"># data-copybutton-pos="midleft"
+        
+print("Hello world")</code></pre>
+  </body>
+</html>

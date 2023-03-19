@@ -1,0 +1,7 @@
+.redbutton {
+  background: red !important;
+}
+
+code.hljs {
+  background: var(--background);
+}
